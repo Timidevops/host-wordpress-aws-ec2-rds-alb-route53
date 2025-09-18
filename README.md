@@ -411,6 +411,14 @@ type when you want, to quit from VIM Editor press `Escape(Esc)` key then write `
 
 ![edit-rds3](https://github.com/user-attachments/assets/c6d3d20b-ddda-4aad-b401-3f4c2247282b)
 
+* If you're using PHP 7.4 or PHP 8.x, install the php-mysqlnd package this is a depencies needed for PHP to run well. php-mysqlnd provides support for mysqli, mysql, and PDO_MySQL
+  
+```bash
+sudo yum install php-mysqlnd -y
+
+```
+
+
 * To make sure everything is saved and new settings are applied, we need to restart Apache server with restart command:
 
 ```bash
