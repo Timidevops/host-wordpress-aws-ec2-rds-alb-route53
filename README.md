@@ -181,13 +181,25 @@ sudo amazon-linux-extras install mariadb10.5 -y
 
 or
 
-sudo yum install mariadb105 -y
+sudo dnf remove -y mariadb105 mariadb105-common mariadb-connector-c mariadb-connector-c-config && sudo tee /etc/yum.repos.d/MariaDB.repo > /dev/null <<EOF
+[mariadb]
+name = MariaDB
+baseurl = https://rpm.mariadb.org/10.11/rhel/9/x86_64
+gpgkey=https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOF
+
+then
+
+sudo dnf install -y MariaDB-server
 ```
 
 Let's start the MariaDB service, by running the following command, you start the MariaDB database server, enabling it to accept connections and handle database operations.
 
 ```bash
+sudo systemctl enable --now mariadb
 sudo systemctl start mariadb
+sudo systemctl status mariadb
 ```
 
 As you can see below the database is running.
