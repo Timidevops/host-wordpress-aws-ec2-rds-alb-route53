@@ -178,6 +178,10 @@ Next, let's install MariaDB, by running following command, you install MariaDB 1
 
 ```bash
 sudo amazon-linux-extras install mariadb10.5 -y
+
+or
+
+sudo yum install mariadb105 -y
 ```
 
 Let's start the MariaDB service, by running the following command, you start the MariaDB database server, enabling it to accept connections and handle database operations.
